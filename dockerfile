@@ -1,7 +1,7 @@
 FROM php:8.3-fpm
 
 #Define variáveis
-ARG user=finance
+ARG user=danillo
 ARG uid=1000
 
 # Instala dependencias de sistema
