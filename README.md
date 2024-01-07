@@ -4,5 +4,5 @@ Configuração básica docker com:
 - postgres 16.1
 - redis 7.2.3
 
-para executar insira o comando abaixo:
+para executar insira o comando:
 docker-compose up -d
