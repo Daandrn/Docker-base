@@ -45,20 +45,6 @@ services:
         networks:
             - laravel
 
-    # queue
-    queue:
-        image: php:8.3
-        container_name: queue
-        restart: unless-stopped
-        command: "php artisan queue:work"
-        volumes:
-            - ./:/var/www
-        depends_on:
-            - redis
-            - app
-        networks:
-            - laravel
-
     # redis
     redis:
         image: redis:7.2.3
