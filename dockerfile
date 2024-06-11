@@ -1,7 +1,7 @@
 FROM php:8.3-fpm
 
 #Define variáveis
-ARG user=danillo
+ARG user=root
 ARG uid=1000
 
 # Instala dependencias de sistema
@@ -28,11 +28,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN useradd -G www-data,root -u $uid -d /home/$user $user
 RUN mkdir -p /home/$user/.composer && \
     chown -R $user:$user /home/$user
-
-# Instala Redis
-RUN pecl install -o -f redis \
-    &&  rm -rf /tmp/pear \
-    &&  docker-php-ext-enable redis
 
 # Escolhe pasta de trabalho principal
 WORKDIR /var/www
